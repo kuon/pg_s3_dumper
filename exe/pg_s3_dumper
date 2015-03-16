@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
 require "pg_s3_dumper"
 
 PgS3Dumper::CLI.start
