@@ -9,8 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nicolas Goy"]
   spec.email         = ["kuon@goyman.com"]
 
-  if spec.respond_to?(:metadata)
-  end
 
   spec.summary       = %q{Simple tool to dump postgresql database to an S3 bucket.}
   spec.homepage      = "http://github.com/kuon/pg_s3_dumper"
