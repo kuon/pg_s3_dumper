@@ -1,3 +1,5 @@
+require "optparse"
+
 module PgS3Dumper
   module CLI
     module_function
