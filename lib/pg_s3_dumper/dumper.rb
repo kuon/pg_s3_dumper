@@ -101,7 +101,7 @@ module PgS3Dumper
 
       puts "## Creating backup"
 
-      system "pg_dump -Fc --no-owner --no-acl -d #{database_url} > #{file.path}" or fail 'Cannot create dump'
+      system "pg_dump -Fc #{database_url} > #{file.path}" or fail 'Cannot create dump'
 
       obj = bucket.object(File.join(prefix, key))
 
