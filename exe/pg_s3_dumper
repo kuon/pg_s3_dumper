@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "pg/s3/backup"
+
+puts 'hi'
