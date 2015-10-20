@@ -26,8 +26,24 @@ class Backup
     ts.strftime('%F') == date.strftime('%F')
   end
 
+  def on_week?(date)
+    ts.strftime('%Y-%U') == date.strftime('%Y-%U')
+  end
+
+  def on_month?(date)
+    ts.strftime('%Y-%m') == date.strftime('%Y-%m')
+  end
+
   def keep_on_day(date)
     @keep = true if on_day?(date)
+  end
+
+  def keep_on_week(date)
+    @keep = true if on_week?(date)
+  end
+
+  def keep_on_month(date)
+    @keep = true if on_month?(date)
   end
 
   def prune

@@ -77,18 +77,30 @@ module PgS3Dumper
       # Keep daily backups for one week
       # Keep weekly backups for one month
       # Keep monthly backups for one year
-      days =
-      7.times.map{|i| i.days.ago} +
-      4.times.map{|i| i.weeks.ago} +
-      12.times.map{|i| i.months.ago}
-
-      days.each do |ts|
+      7.times.map{|i| i.days.ago}.each do |ts|
         backups.each do |b|
           b.keep_on_day(ts)
           # We kept one backup on day ts, go to next day
           break if b.keep
         end
       end
+
+      4.times.map{|i| i.weeks.ago}.each do |ts|
+        backups.each do |b|
+          b.keep_on_week(ts)
+          # We kept one backup on day ts, go to next day
+          break if b.keep
+        end
+      end
+
+      12.times.map{|i| i.months.ago}.each do |ts|
+        backups.each do |b|
+          b.keep_on_month(ts)
+          # We kept one backup on day ts, go to next day
+          break if b.keep
+        end
+      end
+
 
       # Keep all backups for today
       backups.each do |b|
