@@ -33,7 +33,7 @@ module PgS3Dumper
 
       database_url =~ %r{postgres://[^/]*/(.+)\??.*$} or raise Error, "Invalid database URL"
       @database_name = $1
-      @prefix = File.join(prefix, database_name)
+      @prefix = File.join(prefix, "#{database_name}/")
 
       aws_key && aws_secret or raise Error, "AWS key and secret required"
 
