@@ -1,14 +1,3 @@
-
-# THIS REPOSITORY HAS MOVED
-
-New URL: https://git.goyman.com/kuon/pg_s3_dumper
-
-Why I moved everything out of GitHub:
-
-https://github.com/kuon/WhyILeftGithub/blob/main/README.md
-
-----
-
 # PG S3 Dumper
 
 This simple tool creates and expires postgresql backups on an S3 bucket.
